@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Muneeba Tariq | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9f6f2;
+      color: #2d2d2d;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 8%;
+      background: #ffffff;
+      border-bottom: 1px solid #ebe5df;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo { font-size: 1.1rem; font-weight: 600; color: #b87c5a; }
+    nav ul { list-style: none; display: flex; gap: 30px; }
+    nav ul a {
+      text-decoration: none;
+      color: #666;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav ul a:hover { color: #b87c5a; }
+
+    .hero {
+      text-align: center;
+      padding: 70px 8% 60px;
+      background: #ffffff;
+    }
+
+    .photo-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      border: 4px solid #b87c5a;
+      margin: 0 auto 20px;
+      display: block;
+      box-shadow: 0 8px 25px rgba(184, 124, 90, 0.2);
+    }
+
+    .photo-placeholder {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: #f0e8e0;
+      border: 4px solid #b87c5a;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #2d2d2d;
+    }
+    .hero h1 span { color: #2d2d2d; }
+
+    .hero .tagline {
+      font-size: 0.95rem;
+      color: #888;
+      font-weight: 300;
+      margin: 6px 0 20px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .social-links a {
+      text-decoration: none;
+      background: #f0e8e0;
+      color: #b87c5a;
+      padding: 8px 20px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      border: 1px solid #e0d0c4;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .social-links a:hover {
+      background: #b87c5a;
+      color: white;
+    }
+
+    .info-chips {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: #888;
+      font-size: 0.82rem;
+    }
+    .info-chips span { display: flex; align-items: center; gap: 5px; }
+
+    section { padding: 55px 8%; max-width: 900px; margin: 0 auto; }
+
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #b87c5a;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 24px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #ebe5df;
+    }
+
+    .about-text {
+      font-size: 0.92rem;
+      color: #666;
+      line-height: 1.85;
+      font-weight: 300;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+    }
+    .skill-box {
+      background: #ffffff;
+      border: 1px solid #ebe5df;
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .skill-box .skill-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #b87c5a;
+      margin-bottom: 8px;
+    }
+    .skill-box .skill-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .chip {
+      font-size: 0.75rem;
+      background: #f9f6f2;
+      border: 1px solid #ebe5df;
+      border-radius: 999px;
+      padding: 3px 12px;
+      color: #555;
+    }
+
+    .projects-list { display: flex; flex-direction: column; gap: 16px; }
+    .project-card {
+      background: #ffffff;
+      border: 1px solid #ebe5df;
+      border-radius: 12px;
+      padding: 20px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      transition: all 0.22s;
+    }
+    .project-card:hover {
+      border-color: #b87c5a;
+      box-shadow: 0 6px 20px rgba(184,124,90,0.1);
+      transform: translateY(-2px);
+    }
+    .proj-left { flex: 1; }
+    .proj-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2d2d2d;
+      margin-bottom: 5px;
+    }
+    .proj-desc {
+      font-size: 0.83rem;
+      color: #888;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .proj-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+    .proj-tag {
+      font-size: 0.7rem;
+      background: #f0e8e0;
+      color: #b87c5a;
+      border-radius: 4px;
+      padding: 3px 10px;
+      font-weight: 500;
+    }
+    .proj-link {
+      text-decoration: none;
+      font-size: 0.78rem;
+      color: #b87c5a;
+      border: 1px solid #e0d0c4;
+      border-radius: 8px;
+      padding: 7px 14px;
+      white-space: nowrap;
+      font-weight: 500;
+      transition: all 0.2s;
+      height: fit-content;
+    }
+    .proj-link:hover { background: #b87c5a; color: white; }
+
+    .edu-list { display: flex; flex-direction: column; gap: 14px; }
+    .edu-card {
+      background: #ffffff;
+      border: 1px solid #ebe5df;
+      border-radius: 10px;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .edu-inst { font-size: 0.95rem; font-weight: 600; color: #2d2d2d; }
+    .edu-deg { font-size: 0.82rem; color: #888; margin-top: 3px; font-weight: 300; }
+    .edu-year {
+      font-size: 0.78rem;
+      color: #b87c5a;
+      font-weight: 600;
+      white-space: nowrap;
+      text-align: right;
+    }
+    .edu-score { font-size: 0.75rem; color: #aaa; margin-top: 2px; }
+
+    @media (max-width: 600px) {
+      nav ul { display: none; }
+      .project-card { flex-direction: column; }
+      .edu-card { flex-direction: column; align-items: flex-start; }
+    }
+
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Muneeba Tariq</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+
+  <img src="myphoto.jpeg" alt="Muneeba Tariq" class="photo-circle" />
+  <h1>Muneeba <span>Tariq</span></h1>
+  <p class="tagline">CS Undergraduate · Software Developer · Rawalpindi, Pakistan</p>
+
+  <div class="social-links">
+    <a href="https://github.com/muneeba67" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/muneeba-tariq-2a7565372/" target="_blank">LinkedIn</a>
+    <a href="mailto:muneebatrriqq239@gmail.com">Email</a>
+    <a href="tel:03185646482">03185646482</a>
+  </div>
+
+  <div class="info-chips">
+    <span>Fatima Jinnah Women University</span>
+    <span>Rawalpindi, Pakistan</span>
+    
+  </div>
+</div>
+
+<section id="about">
+  <div class="section-title">About Me</div>
+  <p class="about-text">
+    Motivated and detail-oriented Computer Science undergraduate at Fatima Jinnah Women University, currently in my 6th semester. I am passionate about software development, distributed systems, and building impactful solutions. I am actively seeking an internship to apply my practical programming skills and project experience in a professional team environment.
+  </p>
+</section>
+
+<section id="skills">
+  <div class="section-title">Technical Skills</div>
+  <div class="skills-grid">
+    <div class="skill-box">
+      <div class="skill-label">Languages</div>
+      <div class="skill-items">
+        <span class="chip">C++</span>
+        <span class="chip">Java</span>
+        <span class="chip">Python</span>
+        <span class="chip">SQL</span>
+      </div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-label">Tools & Frameworks</div>
+      <div class="skill-items">
+        <span class="chip">Dask</span>
+        <span class="chip">XAMPP</span>
+        <span class="chip">Git</span>
+        <span class="chip">VS Code</span>
+      </div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-label">Database</div>
+      <div class="skill-items">
+        <span class="chip">MySQL</span>
+        <span class="chip">DBMS</span>
+        <span class="chip">SQL Queries</span>
+      </div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-label">Concepts</div>
+      <div class="skill-items">
+        <span class="chip">DSA</span>
+        <span class="chip">OOP</span>
+        <span class="chip">AI</span>
+        <span class="chip">Distributed Systems</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-title">Projects</div>
+  <div class="projects-list">
+
+    <div class="project-card">
+      <div class="proj-left">
+        <div class="proj-name">Distributed Web Crawler</div>
+        <div class="proj-desc">Scalable distributed web crawler using Python and Dask for parallel task scheduling with URL deduplication and fault-tolerant storage.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Python</span>
+          <span class="proj-tag">Dask</span>
+          <span class="proj-tag">Distributed Systems</span>
+        </div>
+      </div>
+      <a href="https://github.com/muneeba67/Distributed_Web_Crawler_Dask" target="_blank" class="proj-link">View</a>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-left">
+        <div class="proj-name">Web Scraping & Data Analytics</div>
+        <div class="proj-desc">Web scraping project with exploratory data analysis and data analytics using Python.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Python</span>
+          <span class="proj-tag">EDA</span>
+          <span class="proj-tag">Data Analytics</span>
+        </div>
+      </div>
+      <a href="https://github.com/muneeba67/WebScraping_EDA_DataAnalytics" target="_blank" class="proj-link">View</a>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-left">
+        <div class="proj-name">Library Management System</div>
+        <div class="proj-desc">Console-based system to manage library books and member records with add and delete operations.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">C++</span>
+          <span class="proj-tag">OOP</span>
+        </div>
+      </div>
+      <a href="https://github.com/muneeba67/Library-Management-System-" target="_blank" class="proj-link">View</a>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-left">
+        <div class="proj-name">Database Management Systems</div>
+        <div class="proj-desc">Relational database projects including normalized schemas, complex SQL queries and data retrieval.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">SQL</span>
+          <span class="proj-tag">DBMS</span>
+          <span class="proj-tag">MySQL</span>
+        </div>
+      </div>
+      <a href="https://github.com/muneeba67/database-management-systems" target="_blank" class="proj-link">View</a>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-left">
+        <div class="proj-name">Data Structures & Algorithms</div>
+        <div class="proj-desc">Implementation of core data structures including linked lists, trees, sorting and searching algorithms.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">C++</span>
+          <span class="proj-tag">DSA</span>
+        </div>
+      </div>
+      <a href="https://github.com/muneeba67/DSA" target="_blank" class="proj-link">View</a>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-left">
+        <div class="proj-name">Object Oriented Programming</div>
+        <div class="proj-desc">OOP concepts and projects including classes, inheritance, polymorphism and encapsulation.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">C++</span>
+          <span class="proj-tag">OOP</span>
+        </div>
+      </div>
+      <a href="https://github.com/muneeba67/OOP" target="_blank" class="proj-link">View</a>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-left">
+        <div class="proj-name">Programming Fundamentals</div>
+        <div class="proj-desc">Core programming concepts and foundational problem solving exercises.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">C++</span>
+          <span class="proj-tag">Fundamentals</span>
+        </div>
+      </div>
+      <a href="https://github.com/muneeba67/programming-fundamentals" target="_blank" class="proj-link">View</a>
+    </div>
+
+  </div>
+
+  <div class="project-card">
+  <div class="proj-left">
+    <div class="proj-name">Mobile App Development</div>
+    <div class="proj-desc">Mobile application development projects and assignments.</div>
+    <div class="proj-tags">
+      <span class="proj-tag">Mobile</span>
+      <span class="proj-tag">App Dev</span>
+    </div>
+  </div>
+  <a href="https://github.com/muneeba67/Mobile-App-Development" target="_blank" class="proj-link">View</a>
+</div>
+</section>
+
+<section id="education">
+  <div class="section-title">Education</div>
+  <div class="edu-list">
+
+    <div class="edu-card">
+      <div>
+        <div class="edu-inst">Fatima Jinnah Women University</div>
+        <div class="edu-deg">BS Computer Science · 6th Semester (Ongoing)</div>
+      </div>
+      <div>
+        <div class="edu-year">2022 — Present</div>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <div>
+        <div class="edu-inst">Global College System</div>
+        <div class="edu-deg">Intermediate (FSc) · Pre-Engineering</div>
+      </div>
+      <div>
+        <div class="edu-year">2020 — 2021</div>
+        <div class="edu-score">925 / 1100</div>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <div>
+        <div class="edu-inst">Global School System</div>
+        <div class="edu-deg">Matriculation (SSC)</div>
+      </div>
+      <div>
+        <div class="edu-year">2018 — 2019</div>
+        <div class="edu-score">982 / 1100</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-title">Contact</div>
+  <div class="social-links" style="justify-content: flex-start;">
+    <a href="mailto:muneebatrriqq239@gmail.com">muneebatrriqq239@gmail.com</a>
+    <a href="tel:03185646482">03185646482</a>
+    <a href="https://github.com/muneeba67" target="_blank">github.com/muneeba67</a>
+    <a href="https://www.linkedin.com/in/muneeba-tariq-2a7565372/" target="_blank">LinkedIn</a>
+  </div>
+</section>
+
+</body>
+</html>
